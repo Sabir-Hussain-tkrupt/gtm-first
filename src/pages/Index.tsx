@@ -62,7 +62,7 @@ const Index = () => {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="#hero">
+          <a href="#home">
             <img src={logo} alt="GTMfirst" className="h-10 md:h-12" />
           </a>
           <nav className="hidden md:flex items-center gap-8">
@@ -149,7 +149,7 @@ const Index = () => {
               <p className="text-muted-foreground mb-8">
                 We don't just consult — we implement. From strategy to execution, we build the entire GTM infrastructure your team needs to scale predictably. Every system we create is designed for long-term growth, not quick fixes.
               </p>
-              <a href="#cta" className="btn-primary">
+              <a href="https://calendly.com/ahmed-tkrupt/30min" className="btn-primary">
                 Request a Call <ArrowRight className="w-5 h-5" />
               </a>
             </motion.div>
@@ -512,14 +512,13 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div className="md:col-span-2">
-              <img src={logoMini} alt="GTMfirst" className="h-12 mb-6" />
+              <a href="#home">
+                <img src={logoMini} alt="GTMfirst" className="h-12 mb-6" />
+              </a>
               <p className="text-background/70 max-w-sm mb-6">
                 Empowering B2B companies with advanced Go-To-Market systems to improve pipeline generation and revenue outcomes.
               </p>
               <div className="flex gap-4">
-                <a href="mailto:hr@tkrupt.com" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors">
-                  <Mail className="w-5 h-5" />
-                </a>
                 <a href="https://www.linkedin.com/company/tkrupt/" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors">
                   <Linkedin className="w-5 h-5" />
                 </a>

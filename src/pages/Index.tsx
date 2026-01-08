@@ -62,21 +62,23 @@ const Index = () => {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <img src={logo} alt="GTMfirst" className="h-10 md:h-12" />
+          <a href="#hero">
+            <img src={logo} alt="GTMfirst" className="h-10 md:h-12" />
+          </a>
           <nav className="hidden md:flex items-center gap-8">
             <button onClick={() => scrollToSection("services")} className="nav-link">Services</button>
             <button onClick={() => scrollToSection("process")} className="nav-link">Process</button>
             <button onClick={() => scrollToSection("features")} className="nav-link">Features</button>
             <button onClick={() => scrollToSection("why-us")} className="nav-link">Why Us</button>
           </nav>
-          <a href="#cta" className="btn-primary text-sm">
+          <a href="https://calendly.com/ahmed-tkrupt/30min" className="btn-primary text-sm">
             Book a Call <ArrowRight className="w-4 h-4" />
           </a>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-6 pt-20">
+      <section className="min-h-screen flex items-center justify-center px-6 pt-20" id="home">
         <div className="container mx-auto text-center max-w-4xl">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -114,10 +116,10 @@ const Index = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <a href="#cta" className="btn-primary text-base">
+            <a href="https://calendly.com/ahmed-tkrupt/30min" className="btn-primary text-base">
               Book a GTM Strategy Call <ArrowRight className="w-5 h-5" />
             </a>
-            <button onClick={() => scrollToSection("services")} className="btn-secondary text-base">
+            <button onClick={() => scrollToSection("process")} className="btn-secondary text-base">
               See How It Works
             </button>
           </motion.div>
@@ -497,7 +499,7 @@ const Index = () => {
             <p className="text-lg text-muted-foreground mb-8">
               If your GTM feels fragmented, manual, or unpredictable — let's fix it.
             </p>
-            <a href="mailto:hello@gtmfirst.com" className="btn-primary text-lg">
+            <a href="https://calendly.com/ahmed-tkrupt/30min" className="btn-primary text-lg">
               Book a GTM Strategy Call <ArrowRight className="w-5 h-5" />
             </a>
             <p className="text-sm text-muted-foreground mt-4">No obligation. Clear next steps. Real insights.</p>
@@ -515,10 +517,10 @@ const Index = () => {
                 Empowering B2B companies with advanced Go-To-Market systems to improve pipeline generation and revenue outcomes.
               </p>
               <div className="flex gap-4">
-                <a href="mailto:hello@gtmfirst.com" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors">
+                <a href="mailto:hr@tkrupt.com" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors">
                   <Mail className="w-5 h-5" />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors">
+                <a href="https://www.linkedin.com/company/tkrupt/" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors">
                   <Linkedin className="w-5 h-5" />
                 </a>
               </div>

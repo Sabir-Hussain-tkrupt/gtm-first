@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 240 10% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 20%;
+
+    --primary: 258 60% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 10% 20%;
+
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 5% 50%;
+
+    --accent: 330 80% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 258 60% 55%;
+
+    --radius: 0.75rem;
+
+    /* Custom GTMfirst tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(258, 60%, 55%) 0%, hsl(330, 80%, 60%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(240, 5%, 98%) 100%);
+    --shadow-card: 0 1px 3px 0 hsl(240 10% 20% / 0.04), 0 1px 2px -1px hsl(240 10% 20% / 0.04);
+    --shadow-card-hover: 0 10px 40px -10px hsl(258 60% 55% / 0.15);
+    --font-display: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  .dark {
+    --background: 240 10% 8%;
+    --foreground: 0 0% 95%;
+    --card: 240 10% 12%;
+    --card-foreground: 0 0% 95%;
+    --popover: 240 10% 12%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 258 60% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 5% 18%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 240 5% 18%;
+    --muted-foreground: 240 5% 60%;
+    --accent: 330 80% 65%;
+    --accent-foreground: 0 0% 100%;
+    --border: 240 5% 20%;
+    --input: 240 5% 20%;
+    --ring: 258 60% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .gradient-bg {
+    background-image: var(--gradient-primary);
+  }
+
+  .card-elevated {
+    @apply bg-card rounded-xl border border-border;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .card-elevated:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-2px);
+  }
+
+  .section-badge {
+    @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium;
+    @apply bg-secondary text-muted-foreground border border-border;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold text-primary-foreground transition-all duration-300;
+    background-image: var(--gradient-primary);
+    box-shadow: 0 4px 14px 0 hsl(258 60% 55% / 0.35);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 6px 20px 0 hsl(258 60% 55% / 0.45);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+    @apply bg-card text-foreground border border-border hover:border-primary/30 hover:bg-secondary;
+  }
+
+  .nav-link {
+    @apply text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium;
+  }
+
+  .timeline-line {
+    @apply absolute left-6 top-12 bottom-0 w-0.5;
+    background: linear-gradient(180deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  }
+
+  .timeline-dot {
+    @apply w-12 h-12 rounded-full flex items-center justify-center text-primary-foreground font-bold text-lg shrink-0;
+    background-image: var(--gradient-primary);
+  }
+
+  .feature-tab {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-medium transition-all duration-300;
+    @apply bg-card border border-border text-muted-foreground;
+  }
+
+  .feature-tab.active {
+    @apply bg-foreground text-background border-foreground;
+  }
+
+  .feature-tab:hover:not(.active) {
+    @apply border-primary/40 text-foreground;
+  }
+}
